@@ -1,0 +1,67 @@
+<head>
+
+    <script>
+        //console.log("rps");
+        function computerPlay() {
+            var result = "";
+            var answers = ['Rock', 'Paper', 'Scissors'];
+            var randNum = Math.floor(Math.random() * 3);
+            result = answers[randNum];
+            //console.log("Computer chose: " + result);
+            return result;
+        }
+        
+        function playRound(playerSelection, computerSelection) {
+            var newPS = playerSelection.toLowerCase();
+            var res = "";
+            if (newPS == "rock" && computerSelection == "Scissors"){
+                //console.log("You win! Rock beats scissors!");
+                res = "You win! Rock beats scissors!";
+            }
+            else if (newPS == "rock" && computerSelection == "Paper"){
+                //console.log("You win! Rock beats paper");
+                res = "You lose! Paper beats rock";
+            } else if (newPS == "rock" && computerSelection == "Rock") {
+                //console.log("Tied!");
+                res = "Tied!";
+            }
+            else if (newPS == "paper" && computerSelection == "Rock"){
+                //console.log("You Win! Paper beats rock!");
+                res = "You Win! Paper beats rock!";
+            }
+            else if (newPS == "paper" && computerSelection == "Paper"){
+                //console.log("Tied");
+                res = "Tied!";
+            } else if (newPS == "paper" && computerSelection == "Scissors") {
+                //console.log("You lose! Scissors beats paper!");
+                res = "You lose! Scissors beats paper!";
+            }
+            else if (newPS == "scissors" && computerSelection == "Scissors"){
+                //console.log("Tied!");
+                res = "Tied!";
+            }
+            else if (newPS == "scissors" && computerSelection == "Paper"){
+                //console.log("You win! Scissors beats paper");
+                res = "You win! Scissors beats paper";
+            } else if (newPS == "scissors" && computerSelection == "Rock") {
+                //console.log("You lose! Rock beats scissors!");
+                res = "You lose! Rock beats scissors!";
+            }
+            return res;
+        }
+
+        function game(){
+            for (i = 0; i <= 4; i++){
+                var computerSelection = computerPlay();
+                var playerSelection = prompt("Enter your weapon of choice: ");
+                console.log(playRound(playerSelection, computerSelection));
+            }
+        }
+
+        game();
+
+    </script>
+
+</head>
+
+<body></body>
